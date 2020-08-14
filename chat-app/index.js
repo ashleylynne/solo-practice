@@ -27,3 +27,10 @@ const server = http.listen(8080, function() {
     console.log('listening on *:8080');
 });
 
+// Based on this experience, you should now understand the basic of a chat application using Node.js and Socket.io. There are a lot of things you can do to improve this code e.g.:
+// Add typing notification (someone is typing…)
+// Add emoji or emoticon
+// Saving it to the database
+// Etc. The limit is your imagination.
+
+// source: https://itnext.io/build-a-group-chat-app-in-30-lines-using-node-js-15bfe7a2417b
