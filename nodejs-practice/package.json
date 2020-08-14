@@ -1,0 +1,15 @@
+{
+  "name": "node-practice",
+  "version": "1.0.0",
+  "description": "just for practice",
+  "main": "main.js",
+  "scripts": {
+    "test": "node main.js"
+  },
+  "author": "STAN.L.E",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {}
+}
