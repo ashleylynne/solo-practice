@@ -1,0 +1,41 @@
+html, body{
+    margin: 0;
+    background-color: cadetblue
+}
+.header-container{
+    display: grid;
+    grid-auto-columns: repeat(11, 1fr);
+    grid-template-rows: 2fr;
+    grid-gap: 2px;
+    background-color: rgb(136, 136, 136);
+    /* background-color: #fff; */
+}
+
+
+.site-name{
+    font-family: Helvetica;
+    font-size: 100px;
+    grid-column: 5/10;
+    color: #fff;
+    /* color: rgb(0, 0, 0); */
+}
+
+.safe{
+    color: rgb(145, 4, 4);
+}
+
+.form-container{
+    display: grid;
+    grid-auto-columns: repeat(11, 1fr);
+    grid-template-rows: 2fr;
+    grid-gap: 5px;
+    padding: 10px;
+    /* background-color: rgb(145, 4, 4); */
+    background-color: #fff;
+    
+}
+
+.form{
+    grid-column: 5/10;
+}
+
