@@ -1,34 +1,46 @@
-import React, { Component } from "react"
+import React from "react"
 import Header from "./Header"
+import {useState, useEffect} from "react"
+import axios from "axios"
 import './App.css'
 
-class App extends Component{
+function App (){
 
-    state = {
-        input: ""
-    }
+    const [quotesData, setQuotesData] = useState({text: "", author: ""})
 
-    submitHandler = e => {
+
+    
+    useEffect( () => {
+        axios.get("https://api.fisenko.net/quotes?l=en")
+        .then(res => console.log(res))
+        .catch(err => console.log(err))
+
+        // .then(data => setQuotesData({
+        //     quotesData: data
+        // }))
+    //     .then(res => console.log(res.data))
+    }, [])
+    
+    const submitHandler = e => {
         return(
             <div>
-                {/* motivational text here */}
+                {/* motivational text from get request here */}
             </div>
         )
     }
 
-    render(){
-        return(
-            <div className="app-container">
-               <Header />
-               <div className="form-container">
-                <form className="form" onSubmit={this.submitHandler}>
-                        <input placeholder="just let it out"></input>
-                        <button type="submit">and let it go</button>
-                </form>
-               </div>
+    return(
+        <div className="app-container">
+            <Header />
+            <div className="form-container">
+            <form className="form" onSubmit={submitHandler}>
+                    <input placeholder="just let it out"></input>
+                    <button type="submit">and let it go</button>
+            </form>
             </div>
-        )
-    }
+        </div>
+    )
+
 }
 
 export default App
