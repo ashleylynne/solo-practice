@@ -12,8 +12,8 @@ function App (){
     useEffect( () => {
         axios.get("https://type.fit/api/quotes")
         .then(res => {
-            console.log(res.data)
-            setQuotesData({quotesData: res.data})
+            setQuotesData({[quotesData]: res.data})
+            console.log(quotesData)
         })
         .catch(err => console.log(err))
     }, [])
@@ -21,11 +21,12 @@ function App (){
     const submitHandler = e => {
         e.preventDefault()
         console.log("submit")
-        const newQuote = {
-            author: quotesData.author,
-            text: quotesData.text
-        }
-        console.log(newQuote)
+        // const newQuote = {
+        //     author: quotesData.author,
+        //     text: quotesData.text
+        // }
+        // console.log(newQuote)
+
         // setQuotesData(prevQuotesData => [
         //     ...prevQuotesData,
         //     newQuote
