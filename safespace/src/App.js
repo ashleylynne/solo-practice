@@ -2,31 +2,35 @@ import React from "react"
 import Header from "./Header"
 import {useState, useEffect} from "react"
 import axios from "axios"
+// import Quote from "./Quote"
 import './App.css'
 
 function App (){
 
     const [quotesData, setQuotesData] = useState({text: "", author: ""})
 
-
-    
     useEffect( () => {
-        axios.get("https://api.fisenko.net/quotes?l=en")
-        .then(res => console.log(res))
+        axios.get("https://type.fit/api/quotes")
+        .then(res => {
+            console.log(res.data)
+            setQuotesData({quotesData: res.data})
+        })
         .catch(err => console.log(err))
-
-        // .then(data => setQuotesData({
-        //     quotesData: data
-        // }))
-    //     .then(res => console.log(res.data))
     }, [])
     
     const submitHandler = e => {
-        return(
-            <div>
-                {/* motivational text from get request here */}
-            </div>
-        )
+        e.preventDefault()
+        console.log("submit")
+        const newQuote = {
+            author: quotesData.author,
+            text: quotesData.text
+        }
+        console.log(newQuote)
+        // setQuotesData(prevQuotesData => [
+        //     ...prevQuotesData,
+        //     newQuote
+        // ])
+
     }
 
     return(
@@ -34,10 +38,11 @@ function App (){
             <Header />
             <div className="form-container">
             <form className="form" onSubmit={submitHandler}>
-                    <input placeholder="just let it out"></input>
-                    <button type="submit">and let it go</button>
+                    <input placeholder="what's on your mind?"></input>
+                    <button type="submit">let it go</button>
             </form>
             </div>
+            {/* <Quote /> */}
         </div>
     )
 
