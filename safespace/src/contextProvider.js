@@ -20,12 +20,12 @@ ContextProvider = (props) => {
     }, [])
 
     return(
-        <ContextProvider value ={{quotesData}}>
+        <Context.Provider value ={{quotesData}}>
             {props.children}
-        </ContextProvider>
+        </Context.Provider>
     )
 }
 
 
-export {ContextProvider as Provider, Context}
+export {ContextProvider, Context}
 
