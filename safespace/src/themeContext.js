@@ -1,14 +1,14 @@
-import React from "react"
+// import React from "react"
 
-const ThemeContext = React.createContext()
+// const ThemeContext = React.createContext()
 
-function ThemeContextProvider(props) {
-    return(
-        <ThemeContext.Provider value={theme}>
-            {props.children}
-        </ThemeContext.Provider>
-    )    
+// function ThemeContextProvider(props) {
+//     return(
+//         <ThemeContext.Provider value={theme}>
+//             {props.children}
+//         </ThemeContext.Provider>
+//     )    
 
-}
+// }
 
-export {ThemeContextProvider, ThemeContext}
+// export {ThemeContextProvider, ThemeContext}
