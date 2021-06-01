@@ -1,10 +1,15 @@
-import React from "react"
+import React, {useContext} from "react"
+import { Context } from "./contextProvider"
 
 function Quote (props) {
+
+    const {newQuote} = useContext(Context)
+
     return(
         <div>
-            {/* <h3>{quotesData.text}</h3>
-            <p>{quotesData.author}</p> */}
+            <h3>{newQuote}</h3>
+            {/* <p>{newQuote.author}</p> */}
+            <p>HI</p>
         </div>
     )
 }
