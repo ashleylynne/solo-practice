@@ -7,9 +7,9 @@ const Context = React.createContext()
 function ContextProvider (props) {
 
     const [quotesData, setQuotesData] = useState()
-    const [favQuote, setFavQuote] = useState(props)
-    const [newQuote, setNewQuote] = useState(props)
-    const [favQuotesArr, setFavQuotesArr] = useState(props)
+    const [favQuote, setFavQuote] = useState({text: "", author: ""})
+    const [newQuote, setNewQuote] = useState({text: "", author: ""})
+    const [favQuotesArr, setFavQuotesArr] = useState([])
 
     useEffect( () => {
         axios.get("https://type.fit/api/quotes")
@@ -30,10 +30,8 @@ function ContextProvider (props) {
         }
             
     // need a button that renders with the quote and allows the user to save the quote to a favorites list
-    const handleSave = (e) => {
-        e.preventDefault()
+    const handleSave = (favQuote) => {
         console.log("submit favorite!")
-        setFavQuotesArr([])
         setFavQuote(newQuote)
         setFavQuotesArr(prev => [prev.favQuotesArr, favQuote])
         console.log(favQuotesArr)

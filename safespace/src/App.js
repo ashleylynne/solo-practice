@@ -4,6 +4,7 @@ import Quote from "./Quote"
 import {Context} from "./contextProvider"
 // import {Link} from "react-router-dom"
 import './App.css'
+import FavQuotes from "./FavQuotes"
 
 function App (){
 
@@ -25,6 +26,7 @@ function App (){
             </Link> */}
             <br></br>
             <Quote />
+            
             </div>
         </div>
     )

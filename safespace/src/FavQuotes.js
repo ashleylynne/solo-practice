@@ -4,12 +4,12 @@ import { Context } from "./contextProvider"
 
 
 function FavQuotes() {
-    const {newQuote} = useContext(Context)
+    const {favQuote, favQuotesArr} = useContext(Context)
 
     return(
         <div>
-            <h3>{newQuote.text}</h3>
-            <p>{newQuote.author}</p>
+            <h3>{favQuote.text}</h3>
+            <p>{favQuote.author}</p>
         </div>
     )
 
