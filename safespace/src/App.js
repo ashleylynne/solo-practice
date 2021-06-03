@@ -15,15 +15,15 @@ function App (){
             <div className="form-container">
             <form className="form" onSubmit={submitHandler}>
                     <input placeholder="what's on your mind?"></input>
-                    <button type="submit">let it go</button>
-                    <button onClick={() => console.log(quotesData)}>test context</button>
+                    <button onClick={() => <Quote />} type="submit">let it go</button>
+                    {/* <button onClick={() => console.log(quotesData)}>test context</button> */}
                     <br></br>
-                    {/* <button onClick={() => {favoritesSubmitHandler}}></button> */}
-                    
+                    {/* <button onClick={() => {favoritesSubmitHandler}}></button> */}                    
             </form>
             {/* <Link to ="/favorites">
                 Favorite Quotes
             </Link> */}
+            <br></br>
             <Quote />
             </div>
         </div>

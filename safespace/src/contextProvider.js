@@ -8,54 +8,39 @@ function ContextProvider (props) {
 
     const [quotesData, setQuotesData] = useState()
     const [favQuote, setFavQuote] = useState(props)
-    const [newQuote, setNewQuote] = useState()
+    const [newQuote, setNewQuote] = useState(props)
+    const [favQuotesArr, setFavQuotesArr] = useState(props)
 
     useEffect( () => {
         axios.get("https://type.fit/api/quotes")
         .then(res => {
-            return(
-                setQuotesData(
-                    console.log({...res.data})
-                )
-            )
+            setQuotesData(res.data)
+                console.log(quotesData)
+                
         })
         .catch(err => console.log(err))
     }, [])
 
-    // how to make this block of code DRYer?
     const submitHandler = (e) => {
         e.preventDefault()
         console.log("submit!")
-        axios.get("https://type.fit/api/quotes")
-        .then(res => {
-            const quote = res.data
-            return(
-                setNewQuote(
-                    console.log({
-                        newQuote: quote[Math.floor(Math.random() * quote.length)],
-                        text: quote.text,
-                        author: quote.author
-                    }))
-                )
-            })
-                .catch(err => console.log(err))
-                
-            }
+        let randomQuote = quotesData[Math.floor(Math.random() * quotesData.length)]
+        setNewQuote(randomQuote)
+        console.log(newQuote)
+        }
             
     // need a button that renders with the quote and allows the user to save the quote to a favorites list
-    const favoritesSubmitHandler = (e) => {
+    const handleSave = (e) => {
         e.preventDefault()
-        return(
-            setFavQuote(prev => ({
-                ...prev,
-                favQuote: [...prev, favQuote]
-            }))
-        )
-        
-    }
+        console.log("submit favorite!")
+        setFavQuotesArr([])
+        setFavQuote(newQuote)
+        setFavQuotesArr(prev => [prev.favQuotesArr, favQuote])
+        console.log(favQuotesArr)
+    }     
 
     return(
-        <Context.Provider value ={{quotesData, newQuote, submitHandler, favoritesSubmitHandler}}>
+        <Context.Provider value ={{newQuote, submitHandler, handleSave}}>
             {props.children}
         </Context.Provider>
     )
