@@ -1,7 +1,6 @@
-import React, {useContext} from "react"
+import React from "react"
 import Header from "./Header"
 import Quote from "./Quote"
-import {Context} from "./contextProvider"
 import './App.css'
 import {Switch, Route} from "react-router-dom"
 import FavQuotes from "./FavQuotes"
@@ -10,12 +9,14 @@ import Navbar from "./Navbar"
 
 function App (){
 
-    const {quotesData, submitHandler} = useContext(Context)
     return(
         <div className="app-container">
+            <Navbar />
+            <Header />
             <div>
                 <Switch>
                     <Route exact path="/">
+                        <Quote />            
                     </Route>
                     <Route exact path="/favorites">
                         <FavQuotes />
@@ -25,9 +26,6 @@ function App (){
                     </Route>
                 </Switch>
             </div>
-            <Navbar />
-            <Header />
-            <Quote />            
         </div>
     )
 }
