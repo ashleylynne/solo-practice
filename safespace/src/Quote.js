@@ -6,7 +6,7 @@ function Quote (props) {
     const {newQuote, handleSave} = useContext(Context)
 
     return(
-        <div>
+        <div className="quotes">
             <h3>{newQuote.text}</h3>
             <p>{newQuote.author}</p>
             <button onClick={handleSave}>Add to favorites</button>

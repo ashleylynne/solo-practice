@@ -1,13 +1,13 @@
 html, body{
     margin: 0;
-    background-color: cadetblue
+    background-color: rgb(194, 72, 243)
 }
 .header-container{
     display: grid;
-    grid-auto-columns: repeat(11, 1fr);
-    grid-template-rows: 2fr;
+    grid-auto-columns: repeat(13, 1fr);
+    grid-template-rows: 3fr;
     grid-gap: 2px;
-    background-color: rgb(136, 136, 136);
+    background-color: rgb(243, 176, 52);
     /* background-color: #fff; */
 }
 
@@ -15,27 +15,76 @@ html, body{
 .site-name{
     font-family: Helvetica;
     font-size: 100px;
-    grid-column: 5/10;
+    grid-column: 6/12;
     color: #fff;
+    margin-left: 65px;
     /* color: rgb(0, 0, 0); */
 }
 
 .safe{
-    color: rgb(145, 4, 4);
+    color: rgb(194, 72, 243);
+}
+
+.space{
+    color: rgb(194, 72, 243);
 }
 
 .form-container{
     display: grid;
-    grid-auto-columns: repeat(11, 1fr);
-    grid-template-rows: 2fr;
+    grid-auto-columns: repeat(13, 1fr);
+    /* grid-template-rows: 2fr; */
     grid-gap: 5px;
-    padding: 10px;
+    padding: 2px;
+    grid-column: 1/12;
     /* background-color: rgb(145, 4, 4); */
-    background-color: #fff;
+    background-color: rgb(17, 156, 248);
     
 }
 
 .form{
     grid-column: 5/10;
+    margin-left: 100px;
 }
 
+.quotes{
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: #fff;
+    margin: 50px;
+    font-size: large;
+}
+
+.nav-container{
+    display: grid;
+    grid-auto-columns: 13, 1fr;
+    column-gap: 10px;
+}
+
+.navbar{
+    grid-column: 1/13;
+    padding: 10px;
+}
+
+.navbar :hover{
+    background-color: rgb(17, 156, 248);
+    font-size: large;
+}
+
+
+.link{
+    color: #fff;
+    padding: 10px;
+}
+
+
+.about-container{
+    color: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 50px;
+}
+
+.favs-header{
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: #fff;
+    margin-left: 50px;
+
+}
