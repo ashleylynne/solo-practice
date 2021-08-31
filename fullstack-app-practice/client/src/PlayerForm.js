@@ -2,7 +2,7 @@ import React, { useContext } from "react"
 import { Context } from "./contextProvider"
 
 export default function PlayerForm(){
-    const {handleChange, onePlayer} = useContext(Context)
+    const {handleChange, name} = useContext(Context)
 
     return(
         <div>
@@ -11,13 +11,13 @@ export default function PlayerForm(){
                     type= "text" 
                     name="player_name" 
                     placeholder="name" 
-                    value={onePlayer.name} 
+                    value={name} 
                     onChange={handleChange} />
                 <input 
                     type= "text" 
                     name="team_abbreviation" 
                     placeholder="team" 
-                    value={onePlayer.team} 
+                    value={name} 
                     onChange={handleChange} />
             </form>
         </div>
